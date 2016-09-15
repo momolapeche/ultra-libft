@@ -6,7 +6,7 @@
 /*   By: rmenegau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:34:18 by rmenegau          #+#    #+#             */
-/*   Updated: 2015/11/25 18:11:55 by rmenegau         ###   ########.fr       */
+/*   Updated: 2016/06/10 11:18:58 by rmenegau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	mp(char c)
 {
-	return ((c == '-' || c == '+'));
+	return (c == '-' || c == '+');
 }
 
 int			ft_atoi(const char *str)

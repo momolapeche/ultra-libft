@@ -6,7 +6,7 @@
 /*   By: rmenegau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:40:57 by rmenegau          #+#    #+#             */
-/*   Updated: 2015/11/26 16:48:25 by rmenegau         ###   ########.fr       */
+/*   Updated: 2016/06/08 13:44:08 by rmenegau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ char	*ft_itoa(int n)
 	size_t	pow;
 	char	*r;
 
-	pow = n == 0 ? 1 : 0;
+	pow = 1;
 	while (n / ft_power(10, pow) != 0)
 		pow++;
-	r = ft_memalloc(n < 0 ? pow + 2 : pow + 1);
-	if (n < 0)
-		r[0] = '-';
+	r = (char *)malloc(sizeof(char) * (pow + (n < 0)));
+	r[0] = n < 0 ? '-' : '\0';
+	n = n < 0 ? n : -n;
+	r[pow + (r[0] == '-')] = '\0';
 	while (pow-- != 0)
 	{
-		r[pow + (n < 0 ? 1 : 0)] = (n < 0 ? -(n % 10) : n % 10) + '0';
+		r[pow + (r[0] == '-')] = -(n % 10) + '0';
 		n /= 10;
 	}
 	return (r);

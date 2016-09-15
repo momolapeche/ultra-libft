@@ -6,7 +6,7 @@
 /*   By: rmenegau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:25:47 by rmenegau          #+#    #+#             */
-/*   Updated: 2016/05/10 17:33:39 by rmenegau         ###   ########.fr       */
+/*   Updated: 2016/06/10 11:15:22 by rmenegau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct	s_list
 
 int				ft_atoi(const char *str);
 int				ft_atoi_b(const char *str, int b);
+long			ft_atol(const char *str);
 int				ft_getnbr(char const *s);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);

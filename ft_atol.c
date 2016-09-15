@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmenegau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 13:23:44 by rmenegau          #+#    #+#             */
-/*   Updated: 2016/09/08 10:51:30 by rmenegau         ###   ########.fr       */
+/*   Created: 2016/06/10 11:14:13 by rmenegau          #+#    #+#             */
+/*   Updated: 2016/06/10 11:19:41 by rmenegau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+static int	mp(char c)
 {
-	t_list	*list;
+	return (c == '-' || c == '+');
+}
 
-	list = (t_list *)ft_memalloc(sizeof(t_list));
-	if (list != NULL)
-	{
-		if (content == NULL)
-		{
-			list->content = NULL;
-			list->content_size = 0;
-		}
-		else
-		{
-			list->content = ft_memalloc(content_size);
-			ft_memcpy(list->content, content, content_size);
-			list->content_size = content_size;
-		}
-		list->next = NULL;
-	}
-	return (list);
+long		ft_atol(const char *str)
+{
+	long	result;
+
+	result = 0;
+	if ((mp(*str) && ft_isdigit(str[1])) || ft_isspace(*str))
+		return (*str == '-' ? -ft_atoi(str + 1) : ft_atoi(str + 1));
+	while (*str != '\0' && ft_isdigit(*str))
+		result = (result * 10) + (*str++ - '0');
+	return (result);
 }

@@ -6,7 +6,7 @@
 #    By: rmenegau <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 09:58:24 by rmenegau          #+#    #+#              #
-#    Updated: 2016/05/10 17:35:23 by rmenegau         ###   ########.fr        #
+#    Updated: 2016/06/10 11:19:58 by rmenegau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC=ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c \
 	ft_toupper.c ft_lstcount.c ft_lstaddl.c ft_lstdelone_i.c ft_realloc_p.c \
 	ft_atoi_b.c ft_itoa_b.c ft_realloc.c get_next_line.c ft_getnbr.c \
+	ft_atol.c \
 	conv.c conv_di.c conv_oux.c conv_s.c parkour.c ptf_prec.c split_utf8.c \
 	conv_c.c conv_else.c conv_p.c ft_printf.c ptf_chmp.c split_flag.c
 OBJ=$(SRC:.c=.o)
